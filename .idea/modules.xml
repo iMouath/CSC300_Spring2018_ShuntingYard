@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CSC300_Spring2018_ShuntingYard.iml" filepath="$PROJECT_DIR$/CSC300_Spring2018_ShuntingYard.iml" />
+      <module fileurl="file://C:\Users\Mouath\StudioProjects\CSC300_Spring2018_ShuntingYard\CSC300_Spring2018_ShuntingYard.iml" filepath="C:\Users\Mouath\StudioProjects\CSC300_Spring2018_ShuntingYard\CSC300_Spring2018_ShuntingYard.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Mouath\StudioProjects\CSC300_Spring2018_ShuntingYard\app\app.iml" filepath="C:\Users\Mouath\StudioProjects\CSC300_Spring2018_ShuntingYard\app\app.iml" />
     </modules>
   </component>
 </project>
