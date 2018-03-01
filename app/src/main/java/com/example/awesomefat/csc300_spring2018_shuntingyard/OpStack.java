@@ -29,8 +29,21 @@ public class OpStack
         return currTop;
     }
 
-    public void push()
+    public void push(OpNode node)
     {
         //this is the logic for whether you can add a OpNode to the stack
+        if(this.top == null)
+        {
+            this.top = node;
+        }
+        else
+        {
+            node.setNextNode(this.top);
+            this.top = node;
+        }
+    }
+
+    public boolean isEmpty() {
+        return this.top == null;
     }
 }
