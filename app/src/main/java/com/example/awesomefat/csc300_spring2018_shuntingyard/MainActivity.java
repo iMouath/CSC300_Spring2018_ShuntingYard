@@ -12,6 +12,8 @@ public class MainActivity extends AppCompatActivity
     private Queue inputQ;
     private OpStack opStack;
     private Queue outputQ;
+    private Queue solutionQ;
+    private OpStack solutionStack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -23,6 +25,8 @@ public class MainActivity extends AppCompatActivity
         this.inputQ = new Queue();
         this.outputQ = new Queue();
         this.opStack = new OpStack();
+        this.solutionQ = new Queue();
+        this.solutionStack = new OpStack();
     }
 
     private String removeSpaces(String s)
@@ -116,9 +120,34 @@ public class MainActivity extends AppCompatActivity
         this.opStack.clearOpStack(this.outputQ);
     }
 
-    private void processOutputQueue()
+    public void processOutputQueue(View v)
     {
         //ultimately show the answer on the screen
+        int num1 = 0,num2 = 0;
+        Node currNode;
+        int temp =0;
+        while(!this.outputQ.isEmpty()){
+            currNode = this.outputQ.dequeue();
+            if(currNode instanceof NumNode){
+                this.solutionQ.enqueue((NumNode) currNode);
+            }
+            if (currNode instanceof OpNode){
+                this.solutionStack.push((OpNode) currNode, this.solutionQ);
+            }
+        }
+
+    }
+    private String calculate(){
+        String answer = "";
+        char op = ' ';
+        op = solutionStack.pop().getPayload();
+        Node currNode = this.solutionQ.dequeue();
+        if (op == '+')this.solutionQ.dequeue().getNextNode();
+        if (op == '-')this.solutionQ.dequeue().getNextNode();
+        if (op == '*')this.solutionQ.dequeue().getNextNode();
+        if (op == '/')this.solutionQ.dequeue().getNextNode();
+
+        return answer;
     }
     public void onClickMeButtonPressed(View v)
     {

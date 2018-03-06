@@ -33,15 +33,15 @@
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="deQandStackOPs"
+            android:onClick="processOutputQueue"
             android:text="Do Magic" />
 
         <EditText
-            android:id="@+id/rpnET"
+            android:id="@+id/solutionET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="reverse polish notation"
+            android:hint="Solution"
             android:inputType="textPersonName" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
